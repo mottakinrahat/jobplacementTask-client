@@ -25,7 +25,7 @@ const Post = () => {
                        
                         const postingData = { text,imageUrl,userName,userEmail ,userImage};
                         console.log(postingData);
-                          fetch('http://localhost:5000/dataOfPost', {
+                          fetch('https://job-placement-support-server.vercel.app/dataOfPost', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(postingData)

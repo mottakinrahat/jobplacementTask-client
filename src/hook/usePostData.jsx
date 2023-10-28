@@ -7,7 +7,7 @@ const usePostData = () => {
     const {refetch, data: allPost = [] } = useQuery({
         queryKey: ['dataOfPost'],
 queryFn: async () => {
-    const response = await fetch('http://localhost:5000/dataOfPost')
+    const response = await fetch('https://job-placement-support-server.vercel.app/dataOfPost')
     return response.json();
 },
 })

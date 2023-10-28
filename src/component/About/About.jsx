@@ -6,7 +6,7 @@ const About = () => {
     const { user } = useContext(AuthContext)
     const [loggedData, setLoggedData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/userData?email=${user?.email}`)
+        fetch(`https://job-placement-support-server.vercel.app/userData?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setLoggedData(data))
     }, [user?.email])

@@ -19,7 +19,7 @@ const Register = () => {
                 updateUserData(name, image)
                 .then(() => {
                     const userData={email,image, address, name, universityName}
-                    fetch('http://localhost:5000/userData',{
+                    fetch('https://job-placement-support-server.vercel.app/userData',{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(userData)

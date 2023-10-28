@@ -17,7 +17,7 @@ const Update = () => {
                 const userData = { email, image, address, name, universityName }
                 const id = userDataPrevious._id;
 
-                fetch(`http://localhost:5000/userData/${id}`, {
+                fetch(`https://job-placement-support-server.vercel.app/userData/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(userData)

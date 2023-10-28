@@ -15,6 +15,7 @@ import Register from './component/Register/Register';
 import About from './component/About/About';
 import DetailsPost from './component/DetailsPost/DetailsPost';
 import Update from './component/Update/Update';
+import PrivateRouter from './PrivateRouter/PrivateRouter';
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <PrivateRouter><Home></Home></PrivateRouter>
       },
       {
         path: '/media',
@@ -40,17 +41,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About></About>
+        element: <PrivateRouter><About></About></PrivateRouter>
       },
       {
         path:'/details/:id',
-       element:<DetailsPost></DetailsPost>,
-       loader:({params})=>fetch(`http://localhost:5000/dataOfPost/${params.id}`)
+       element:<PrivateRouter><DetailsPost></DetailsPost></PrivateRouter>,
+       loader:({params})=>fetch(`https://job-placement-support-server.vercel.app/dataOfPost/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/userData/${params.id}`)
+        loader:({params})=>fetch(`https://job-placement-support-server.vercel.app/userData/${params.id}`)
       }
     ]
   },
